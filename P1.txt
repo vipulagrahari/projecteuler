@@ -1,0 +1,27 @@
+
+#include <stdio.h>
+#include <cs50.h>
+#include <string.h>
+
+
+int main(void)
+{
+    const int Q1 = 3;
+    const int Q2 = 5;
+    int j = 0;
+    int count = 0;
+    int n = get_int("Max number: ");
+
+    //number of multiples of  Q1 and Q2
+    for(int i = 1; i < n; i++)
+    {
+        if( (i%Q1) == 0 || (i%Q2) == 0)
+        {
+            count = i + count;
+            j ++;
+        }
+    }
+    printf("number of multiples of %i and %i: %i \n", Q1, Q2, j );
+    printf("Sum of multiples of %i and %i: %i \n", Q1, Q2, count);
+    return 0;
+}

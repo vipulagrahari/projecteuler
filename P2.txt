@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <cs50.h>
+#include <string.h>
+
+int main(void)
+{
+    int fcount1 = 1;
+    int fcount2 = 2;
+    int nt;
+    int count = 0;
+    int n = get_int("Max: ");
+
+    for( int i = 0; i < n ; i++ )
+    {
+        nt = fcount1 + fcount2;
+        fcount1 = fcount2;
+        fcount2 = nt;
+    }
+
+    for(int i = 0; i < n; i++)
+    {
+        if( nt <= 4000000 &&(nt%2) == 0)
+        {
+            count = nt + count;
+        }
+    }
+
+    printf("sum: %i", count);
+    return 0;
+}
